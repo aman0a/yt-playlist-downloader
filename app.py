@@ -35,3 +35,7 @@ def download():
 
     except Exception as e:
         return f"Error: {str(e)}"
+
+if __name__ == "__main__":
+    # Important: listen on all interfaces and use the port from environment (e.g. Render)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
